@@ -1,0 +1,20 @@
+@token = {{login.response.headers.Set-Cookie}}
+
+### Login
+# @name login
+POST {{$dotenv API_URL/sign-in
+Content-Type: application/json
+
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+
+### Change Password (First Access)
+POST {{$dotenv API_URL}/change-password
+Content-Type: application/json
+Cookie: {{token}}
+
+{
+  "newPassword": "newPassword123"
+}
