@@ -15,14 +15,14 @@ import { JwtStrategy } from './jwt.strategy'
         expiresIn: '1d',
       },
     }),
-],
+  ],
   providers: [
     PrismaService,
+    JwtStrategy,
     {
-        provide: UserRepository,
-        useClass: PrismaUserRepository
+      provide: UserRepository,
+      useClass: PrismaUserRepository,
     },
-    JwtStrategy
   ],
 })
 export class AuthModule {}

@@ -1,6 +1,6 @@
 import { UserRepository } from '@/domain/application/repositories/user.repository'
-import { PassportStrategy } from "@nestjs/passport"
-import { ExtractJwt, Strategy } from "passport-jwt"
+import { PassportStrategy } from '@nestjs/passport'
+import { ExtractJwt, Strategy } from 'passport-jwt'
 import { Injectable } from '@nestjs/common'
 
 @Injectable()
