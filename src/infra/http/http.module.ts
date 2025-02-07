@@ -5,11 +5,11 @@ import { ChangePasswordController } from './controllers/auth/change-password.con
 import { AuthenticateUserCase } from '@/domain/application/use-cases/authenticate-user'
 import { ChangePasswordUseCase } from '@/domain/application/use-cases/change-password'
 import { AuthModule } from '../auth/auth.module'
-import { JwtModule, JwtService } from '@nestjs/jwt'
 
 @Module({
   imports: [
     DatabaseModule,
+    AuthModule
 ],
   controllers: [
     SignInController,

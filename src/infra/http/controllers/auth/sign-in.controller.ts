@@ -1,6 +1,6 @@
 import { AuthenticateUserCase } from '@/domain/application/use-cases/authenticate-user'
 import { Body, Controller, HttpStatus, Post, Res } from '@nestjs/common'
-import type { JwtService } from '@nestjs/jwt'
+import { JwtService } from '@nestjs/jwt'
 
 @Controller('/sign-in')
 export class SignInController {
