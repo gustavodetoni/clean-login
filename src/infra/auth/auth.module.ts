@@ -5,6 +5,8 @@ import { Module } from '@nestjs/common'
 import { JwtModule } from '@nestjs/jwt'
 import { PassportModule } from '@nestjs/passport'
 import { JwtStrategy } from './jwt.strategy'
+import { AuthenticateUserCase } from '@/domain/application/use-cases/authenticate-user'
+import { DatabaseModule } from '../database/database.module'
 
 @Module({
   imports: [
@@ -15,10 +17,12 @@ import { JwtStrategy } from './jwt.strategy'
         expiresIn: '1d',
       },
     }),
+    DatabaseModule
   ],
   providers: [
     PrismaService,
     JwtStrategy,
+    AuthenticateUserCase,
     {
       provide: UserRepository,
       useClass: PrismaUserRepository,

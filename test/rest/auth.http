@@ -2,7 +2,7 @@
 
 ### Login
 # @name login
-POST {{$dotenv API_URL/sign-in
+POST {{$dotenv API_URL}}/api/sign-in
 Content-Type: application/json
 
 {
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 
 ### Change Password (First Access)
-POST {{$dotenv API_URL}/change-password
+POST {{$dotenv API_URL}}/api/change-password
 Content-Type: application/json
 Cookie: {{token}}
 

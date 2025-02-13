@@ -23,7 +23,12 @@ export class AuthenticateUserCase {
     email,
     password,
   }: AuthenticateUserRequest): Promise<AuthenticateUserResponse> {
+
     const user = await this.userRepository.findByEmail(email)
+
+    if (!email) {
+      return left(new ResourceNotFound())
+    }
 
     if (!user) {
       return left(new ResourceNotFound())
